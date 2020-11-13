@@ -1,7 +1,7 @@
 <!-- layout -->
 <template>
   <main>
-    <h1 class="skw anim--enter mb-4 font-prim">Proportional.design</h1>
+    <h1 class="skw anim--enter mb-4 font-prim">proportional.design</h1>
     <Article class="skw anim--enter"/>
   </main>
 </template>
