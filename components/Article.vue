@@ -1,6 +1,6 @@
 <!-- layout -->
 <template>
-  <article>
+  <article class="font-sec">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, dignissimos. Maxime recusandae aliquid sunt quisquam, quod unde doloremque, nisi voluptatem, quae modi quasi! Ipsum impedit sint exercitationem in non rerum!</p>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, aspernatur fugiat voluptatibus officiis officia ad deserunt, facere et vitae, numquam nisi deleniti? Dicta cupiditate dolor, atque deleniti ipsam quam veritatis!
     Fugiat aut ullam, voluptatibus neque doloribus non nihil ipsa excepturi repellat perferendis eligendi hic autem temporibus pariatur ratione consequatur qui cum provident eius alias, quas accusantium repellendus voluptates tenetur. Quis!

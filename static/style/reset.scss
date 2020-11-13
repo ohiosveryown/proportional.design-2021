@@ -16,6 +16,7 @@
   --zmin: -9999;
 
   --gravity: #202023;
+  --blush: #ecded4;
 }
 
 html {
@@ -30,6 +31,7 @@ html {
 body {
   color: var(--gravity);
   font: normal 1.8rem/1.4 var(--system-ui);
+  background: var(--blush);
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, span, blockquote, caption, ul, li, img, button, section, article, figure, main, footer {

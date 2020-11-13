@@ -1,14 +1,47 @@
 @import '~/static/style/grid.scss';
 
 @font-face {
-  font-family: "Blush";
-  src: url("../type/blush.woff2") format("woff2");
+  font-family: "Primary";
+  src: url("../type/ogg.woff2") format("woff2");
   font-display: block;
 }
 
-.font-prim { font-family: 'Blush', var(--system-ui); }
+@font-face {
+  font-family: "Primary-Italic";
+  src: url("../type/ogg-italic.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Secondary";
+  src: url("../type/neuebit.woff2") format("woff2");
+  font-display: block;
+}
+
+.font-prim { font-family: 'Primary', 'Georgia'; }
+.font-prim-italic { font-family: 'Primary-Italic', 'Georgia'; }
+.font-sec { font-family: 'Secondary', var(--system-ui); }
+
+.fs-xl {
+  font-size: 24vw;
+  line-height: .64;
+  @include breakpoint(md) { font-size: 11vw; line-height: 1; }
+}
+
+.fs-lg {
+  font-size: 16vw;
+  line-height: 1;
+  @include breakpoint(md) { font-size: 8vw; }
+}
+
+.fs-lgg { font-size: 3.2rem; }
+.fs-mdd { font-size: 2rem; }
+.fs-md { font-size: 1.8rem; }
+.fs-sm { font-size: 1.3rem; }
+.fs-button { font-size: 3.2rem; }
 
 .bold { -webkit-text-stroke: .2px var(--gravity); }
+.light { font-weight: 300; }
 .uc { text-transform: uppercase; }
 .tac { text-align: center; }
 .tar { text-align: right; }

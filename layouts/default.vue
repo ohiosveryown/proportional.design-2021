@@ -1,6 +1,6 @@
 <!-- layout -->
 <template>
-    <nuxt/>
+  <nuxt/>
 </template>
 
 <!-- style -->
@@ -14,10 +14,11 @@
     mounted() {
       if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
       } else {
+        const bdy = document.querySelector('body')
         // smooooth scroll
         document.body.style.height = '100vh'
         Scrollbar.use(OverscrollPlugin)
-        Scrollbar.init(document.querySelector('body'), {
+        Scrollbar.init(bdy, {
           damping: 0.04,
           renderByPixels: true,
           continuousScrolling: true,
@@ -29,9 +30,9 @@
             }
           }
         })
+
         // trigger
-        let bodyScrollBar = Scrollbar.init(document.querySelector('body'));
-        const bdy = document.querySelector('body')
+        let bodyScrollBar = Scrollbar.init(bdy);
         ScrollTrigger.scrollerProxy(bdy, {
           scrollTop(value) {
             if (arguments.length) {
@@ -54,13 +55,14 @@
 
         ScrollTrigger.create({
         scroller: bdy,
-        onUpdate: (self) => {
-        let skew = clamp(self.getVelocity() / 550);
-        if (Math.abs(skew) > Math.abs(proxy.skew)) {
-          proxy.skew = skew;
-          gsap.to(proxy, {skew: 0, duration: .1, ease: "power4.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew)})
-        }
-        }
+          onUpdate: (self) => {
+            let skew = clamp(self.getVelocity() / 600)
+
+            if (Math.abs(skew) > Math.abs(proxy.skew)) {
+              proxy.skew = skew
+              gsap.to(proxy, {skew: 0, duration: .05, ease: "power4.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew)})
+            }
+          }
         })
 
         gsap.set(skw, {transformOrigin: "center center", force3D: true})
