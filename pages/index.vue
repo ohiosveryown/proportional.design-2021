@@ -16,7 +16,13 @@
       secondYear="2020"
       secondMaterial="Sapele"
     />
-    <List/>
+    <ul>
+      <List
+        v-for="project in projects"
+        :project="project"
+        :key="project.id"
+      />
+    </ul>
     <Article class="skw anim--enter"/>
   </div>
 </template>
@@ -25,6 +31,7 @@
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
 
+  ul { margin-bottom: 26.8rem; }
 </style>
 
 <!-- logic -->
@@ -33,11 +40,17 @@
   import Hero from '~/components/Hero'
   import List from '~/components/List'
   import Article from '~/components/Article'
+  import projects from '~/static/projects'
   export default {
     head: () => ({
       title: 'home'
     }),
     components: { Header, Hero, List, Article, },
+    data() {
+      return {
+        projects
+      }
+    },
     mounted() {
       gsap.from('.anim--enter', {
         opacity: 0,
