@@ -65,7 +65,7 @@
 
   .name {
     font-size: 2rem;
-    @include breakpoint(mdl) { font-size: 3.2rem; }
+    @include breakpoint(mdl) { font-size: 2.7rem; }
   }
 
   .materials {

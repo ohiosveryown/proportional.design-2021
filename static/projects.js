@@ -1,9 +1,9 @@
 const projects = [
   {
     id: 1,
-    name: 'Mila Cabinet',
+    name: 'Sideboard',
     year: '2020',
-    material: 'Sapele',
+    material: 'Black Walnut',
     dimensions: '76h x 48w x 16d',
     img: "./img/walnut-sideboard.jpg"
   },
