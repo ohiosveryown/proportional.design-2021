@@ -18,6 +18,7 @@
     />
     <ul>
       <List
+        class="skw"
         v-for="project in projects"
         :project="project"
         :key="project.id"
@@ -30,7 +31,6 @@
 <!-- style -->
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
-
   ul { margin-bottom: 26.8rem; }
 </style>
 

@@ -15,6 +15,14 @@ const projects = [
     dimensions: '24h x 32w x 12d',
     img: "./img/mila-cabinet.jpg"
   },
+  {
+    id: 3,
+    name: 'French Entry Table',
+    year: '2019',
+    material: 'Black Walnut',
+    dimensions: '48h x 52w x 10d',
+    img: "./img/french-table.jpg"
+  },
 ]
 
 

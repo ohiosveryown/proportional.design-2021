@@ -56,7 +56,7 @@
         ScrollTrigger.create({
         scroller: bdy,
           onUpdate: (self) => {
-            let skew = clamp(self.getVelocity() / 600)
+            let skew = clamp(self.getVelocity() / 460)
 
             if (Math.abs(skew) > Math.abs(proxy.skew)) {
               proxy.skew = skew
