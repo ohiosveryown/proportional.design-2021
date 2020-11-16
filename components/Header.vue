@@ -4,15 +4,12 @@
     <div class="lines line-one">
       <h1 class="anim--enter fs-xl font-sec">proportional</h1>
       <h1 class="anim--enter fs-xl font-sec">.design</h1>
-      <!-- <span class="anim--enter fs-lg good icon"/> -->
     </div>
 
     <div class="lines line-two">
-      <button class="anim--enter uc font-sec theme">
-        Get in Touch
-        <!-- <span class="ml-1 fs-button good">b</span> -->
-        <!-- <input type="color"> -->
-      </button>
+      <nuxt-link to='/contact'>
+        <button class="anim--enter uc font-sec">Get in Touch</button>
+      </nuxt-link>
       <h2 class="anim--enter fs-lg tar font-prim">is a studio building</h2>
     </div>
 
@@ -85,20 +82,20 @@
       margin-top: -2rem;
       margin-bottom: 1.2rem;
     }
+    a { margin-left: 3%; }
     button {
       margin: 1.2rem auto;
       padding: 3.2vh 9.6vw;
       font-size: 1.2rem;
       @include breakpoint(md) {
         margin: 1rem 0 0 0;
-        padding: 1.6vh 3.2vw;
+        padding: 3.2vh 3.2vw;
         font-size: 1.6rem;
       }
       @include breakpoint(mdl) {
-        margin: 1.6rem 0 0 3%;
+        margin: 1.6rem 0 0;
         padding: 3.2vh 3.2vw;
         &:hover {
-          /* padding: 3vh 3.4vw; */
           box-shadow:
             inset 1px 1px 0 rgba(255,255,255,1),
             inset -1px -1px 0px rgba(0,0,0,.8);
@@ -145,9 +142,6 @@
   }
 
   button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     padding: 0 1.2rem;
     background: none;
@@ -159,5 +153,7 @@
 
 <!-- logic -->
 <script>
-  export default {  }
+  export default {
+
+  }
 </script>
