@@ -24,6 +24,7 @@
         :key="project.id"
       />
     </ul>
+    <Form/>
     <Article class="skw anim--enter"/>
   </div>
 </template>
@@ -31,7 +32,11 @@
 <!-- style -->
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
-  ul { margin-bottom: 26.8rem; }
+
+  ul {
+    margin: 4rem 0 26.8rem;
+    @include breakpoint(mdl) {margin-top: 0; }
+  }
 </style>
 
 <!-- logic -->
@@ -39,13 +44,14 @@
   import Header from '~/components/Header'
   import Hero from '~/components/Hero'
   import List from '~/components/List'
+  import Form from '~/components/Form'
   import Article from '~/components/Article'
   import projects from '~/static/projects'
   export default {
     head: () => ({
       title: 'home'
     }),
-    components: { Header, Hero, List, Article, },
+    components: { Header, Hero, List, Form, Article, },
     data() {
       return {
         projects

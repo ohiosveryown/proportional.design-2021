@@ -4,7 +4,8 @@
     @mouseenter = 'hover = true'
     @mouseleave = 'hover = false'>
     <figure class="first-img">
-      <img class="avatar mb-1" :class = "{ active : hover }" :src="project.img">
+      <img class="imgLg mb-1" :class = "{ whileHovering : hover }" :src="project.img">
+      <img class="imgSm mb-1" :src="project.img">
       <figcaption class="mt-1">
         <span class="name light">{{ project.name }}</span>
         <sub class="mb-1 ml-1 font-sec">{{ project.year }}</sub>
@@ -25,14 +26,22 @@
     align-items: flex-end;
     position: relative;
     z-index: var(--zmax);
-    padding: 3.2rem 0;
+    padding: 2.4rem 0;
     width: 100%;
-    @include breakpoint(mdl) { border-bottom: 1px solid var(--gravity); }
+    @include breakpoint(mdl) { border-bottom: .75px solid var(--gravity); }
   }
 
-  figure { width: 100%; }
+  // figure { display: flex; align-items: center; width: 100%; }
 
-  img {
+  figure {
+    @include breakpoint(mdl) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .imgLg {
     @include breakpoint(mdl) {
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
@@ -43,7 +52,19 @@
       pointer-events: none;
       box-shadow: 0 4px 84px rgba(0,0,0,.24);
       // transform: scale(.97);
-      transition: all 300ms ease;
+      transition: all 200ms ease;
+    }
+  }
+
+  .imgSm {
+    --size: 4.8rem;
+    display: none;
+    @include breakpoint(mdl) {
+      display: inline-flex;
+      margin: 0 1.6rem 0 0;
+      // border-radius: 4px;
+      width: var(--size); height: calc(var(--size) + 1rem);
+      object-fit: cover;
     }
   }
 
@@ -65,22 +86,21 @@
 
   .name {
     font-size: 2rem;
-    @include breakpoint(mdl) { font-size: 2.7rem; }
+    @include breakpoint(mdl) { font-size: 2.4rem; }
   }
 
   .materials {
-    @include breakpoint(mdl) { flex: 1; font-size: 2.4rem; }
+    @include breakpoint(mdl) { flex: 1; font-size: 2.2rem; }
   }
 
   .dimensions {
     display: none;
-    @include breakpoint(mdl) { display: inherit; justify-self: end; }
+    @include breakpoint(mdl) { display: inherit; justify-self: end; font-size: 1.9rem; }
   }
 
-  .active {
+  .whileHovering {
     @include breakpoint(mdl) { opacity: 1; transform: scale(1); }
   }
-  // @media(pointer: fine) { .active { opacity: 1; }}
 
 </style>
 
