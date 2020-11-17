@@ -8,7 +8,9 @@
       <Contact class="anim--enter pt-4"/>
     </article>
 
+    <figure>
       <svg class="anim--enter" width="400" height="498" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M55.333 402.681V258.95h26.105v-57.61H55.332V57.61h138.713v25.246h83V57.61h-27.667V28.903h-27.666V0H0v402.681h55.333zM249.38 201.34h22.095v-20.626h-77.428v20.626h-18.498v57.61h46.165v-28.706h27.666V201.34zm69.15 268.541V498H101.397V103.57h217.132v28.311h27.095V160h27.096v28.118H400v225.526h-27.28v28.119h-27.096v28.118h-27.095zM155.588 160v281.763h135.846v-28.119h27.095v-28.311h27.095V216.429h-27.095v-28.311h-27.095V160H155.588z" fill="#000"/></svg>
+    </figure>
 
   </main>
 </template>
@@ -19,15 +21,14 @@
     position: relative;
   }
 
-  svg {
+  figure {
     position: absolute;
-    top: 2rem; right: 2rem;
+    top: 2.4rem; right: 2rem;
     transform: scale(.1);
     transform-origin: top right;
 
-    @include breakpoint(md) {
-      top: 0; right: 12vw; bottom: 0;
-      margin: auto;
+    @include breakpoint(mdl) {
+      top: 20rem; right: 12vw;
       transform: scale(.5);
     }
   }
