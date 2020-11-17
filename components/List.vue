@@ -101,7 +101,7 @@
   }
 
   .whileHovering {
-    @include breakpoint(mdl) { opacity: 1; transform: scale(1); }
+    @include breakpoint(mdl) { opacity: 1; transform: scale(1); transition: all 200ms ease 300ms; }
   }
 
 </style>
