@@ -66,7 +66,7 @@
     margin-bottom: .2rem;
     /* width: max-content; */
     border: 1px solid transparent;
-    span { margin: -3.8rem 0 0 1.2rem; }
+    span { display: inline; margin: -3.8rem 0 0 1.2rem; }
     @include breakpoint(md) { margin-bottom: 2rem; span { margin: -2.8rem 0 0 1.2rem; }}
     @include breakpoint(mdl) {
       margin-bottom: 0;
