@@ -1,14 +1,14 @@
 <!-- layout -->
 <template>
-  <div class="width">
+  <div class="width leave-target">
     <Header class="skw"/>
     <Hero
       class="skw anim--enter"
-      :firstSrc="require('~/static/img/walnut-sideboard.jpg')"
-      firstAlt="Walnut Sideboard"
-      firstName="Walnut Sideboard"
+      :firstSrc="require('~/static/img/canyon-dresser-01.jpg')"
+      firstAlt="Canyon Dresser"
+      firstName="Canyon Dresser"
       firstYear="2020"
-      firstMaterial="Black Walnut"
+      firstMaterial="American Oak"
 
       :secondSrc="require('~/static/img/mila-cabinet.jpg')"
       secondAlt="Mila Cabinet"
@@ -24,7 +24,7 @@
         :key="project.id"
       />
     </ul>
-    <Form class="skw"/>
+    <Contact class="skw"/>
     <Footer/>
   </div>
 </template>
@@ -34,8 +34,8 @@
   @import '~/static/style/grid.scss';
 
   ul {
-    margin: 4rem 0 20rem;
-    @include breakpoint(mdl) {margin-top: 0; }
+    margin: 4rem 0 11.2rem;
+    @include breakpoint(mdl) { margin: 0 0 20rem; }
   }
 </style>
 
@@ -44,18 +44,26 @@
   import Header from '~/components/Header'
   import Hero from '~/components/Hero'
   import List from '~/components/List'
-  import Form from '~/components/Form'
+  import Contact from '~/components/Contact'
   import Footer from '~/components/Footer'
   import projects from '~/static/projects'
   export default {
     head: () => ({
       title: 'home'
     }),
-    components: { Header, Hero, List, Form, Footer, },
+    components: { Header, Hero, List, Contact, Footer, },
     data() {
       return {
         projects
       }
+    },
+    beforeDestroy() {
+      const leaveTarget = document.querySelector('.leave-target')
+      leaveTarget.style.cssText = `
+        transform: skewY(6deg) translateY(-200px);
+        opacity: 0;
+        transition: transform 600ms ease, opacity 400ms ease;
+      `
     },
     mounted() {
       gsap.from('.anim--enter', {

@@ -84,9 +84,9 @@
     }
     a { margin-left: 3%; }
     button {
-      margin: 1.2rem auto;
+      margin: 2rem auto;
       padding: 3.2vh 9.6vw;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       @include breakpoint(md) {
         margin: 1rem 0 0 0;
         padding: 3.2vh 3.2vw;

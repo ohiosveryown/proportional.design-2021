@@ -47,7 +47,9 @@
       top: 0; right: 0; bottom: 0; left: 0;
       z-index: var(--zmax);
       margin: auto;
+      max-width: 80vw;
       width: auto; height: 80vh;
+      object-fit: cover;
       opacity: 0;
       pointer-events: none;
       box-shadow: 0 4px 84px rgba(0,0,0,.24);
