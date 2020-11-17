@@ -74,6 +74,14 @@
         duration: 1,
         ease: Power2.easeInOut
       })
+      gsap.from('.anim--delay', {
+        opacity: 0,
+        skewY: 10,
+        y: 20,
+        duration: 1.24,
+        delay: 1,
+        ease: Power2.easeInOut
+      })
     }
   }
 </script>
