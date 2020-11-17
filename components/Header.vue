@@ -4,6 +4,7 @@
     <div class="lines line-one">
       <h1 class="anim--enter fs-xl font-sec">proportional</h1>
       <h1 class="anim--enter fs-xl font-sec">.design</h1>
+      <span class="anim--enter fs-xl font-ter">jj</span>
     </div>
 
     <div class="lines line-two">
@@ -65,12 +66,13 @@
     margin-bottom: .2rem;
     /* width: max-content; */
     border: 1px solid transparent;
-    .icon { margin: -.8rem 0 0 1.2rem; }
-    @include breakpoint(md) { margin-bottom: 2rem; }
+    span { margin: -3.8rem 0 0 1.2rem; }
+    @include breakpoint(md) { margin-bottom: 2rem; span { margin: -2.8rem 0 0 1.2rem; }}
     @include breakpoint(mdl) {
       margin-bottom: 0;
-      .icon { margin: -3.2rem 0 0 2.8rem; }
+      span { margin: -4rem 0 0 2.8rem; }
      }
+     @include breakpoint(lg) { span { margin: -5.6rem 0 0 2.8rem; }}
   }
 
   .line-two {

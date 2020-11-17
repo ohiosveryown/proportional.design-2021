@@ -18,9 +18,16 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: "Tertiary";
+  src: url("../type/goodglyphs.woff2") format("woff2");
+  font-display: block;
+}
+
 .font-prim { font-family: 'Primary', 'Georgia'; }
 .font-prim-italic { font-family: 'Primary-Italic', 'Georgia'; }
 .font-sec { font-family: 'Secondary', var(--system-ui); }
+.font-ter { font-family: 'Tertiary', var(--system-ui); }
 
 .fs-xl {
   font-size: 24vw;
