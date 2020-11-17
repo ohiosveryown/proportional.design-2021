@@ -49,7 +49,7 @@
   import projects from '~/static/projects'
   export default {
     head: () => ({
-      title: 'home'
+      title: 'prop—home'
     }),
     components: { Header, Hero, List, Contact, Footer, },
     data() {

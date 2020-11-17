@@ -45,7 +45,7 @@
     @include breakpoint(mdl) {
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
-      z-index: var(--zmax);
+      z-index: var(--zmin);
       margin: auto;
       max-width: 80vw;
       width: auto; height: 80vh;
