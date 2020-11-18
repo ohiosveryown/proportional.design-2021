@@ -1,7 +1,7 @@
 {
   "name": "proportionaldesign",
   "version": "1.5.0",
-  "description": "Proportional.design is a web presence for a studio building wood furniture and functional objects.",
+  "description": "Proportional.design is the web presence for a studio building wood furniture and functional objects – ran, built, and authored by Matthew Pence.",
   "author": "Matthew Pence",
   "private": true,
   "scripts": {
