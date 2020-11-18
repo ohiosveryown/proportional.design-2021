@@ -47,10 +47,11 @@
   import Contact from '~/components/Contact'
   import Footer from '~/components/Footer'
   import projects from '~/static/projects'
+
   export default {
     head: () => ({
       title: 'prop—home',
-      meta: [{ property: 'og:image', content: '/img/art.png' }]
+      meta: [{ property: 'og:image', src: 'https://raw.githubusercontent.com/ohiosveryown/proportional.design/master/static/img/art.png' }]
     }),
     components: { Header, Hero, List, Contact, Footer, },
     data() {
