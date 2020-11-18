@@ -4,11 +4,11 @@ export default {
 
   // headers
   head: {
-    title: 'Proportional Design'
+    title: "Proportional Design"
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', 'Proportional.design is a web presence for a studio building wood furniture and functional objects.' }
+      { hid: 'description', name: 'description', "Proportional.design is a web presence for a studio building wood furniture and functional objects." }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
