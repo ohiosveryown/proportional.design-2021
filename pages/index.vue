@@ -49,7 +49,8 @@
   import projects from '~/static/projects'
   export default {
     head: () => ({
-      title: 'prop—home'
+      title: 'prop—home',
+      meta: [{ property: 'og:image', content: '/img/art.png' }]
     }),
     components: { Header, Hero, List, Contact, Footer, },
     data() {
