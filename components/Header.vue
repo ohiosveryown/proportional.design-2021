@@ -4,7 +4,7 @@
     <div class="lines line-one">
       <h1 class="anim--enter fs-xl font-sec">proportional</h1>
       <h1 class="anim--enter fs-xl font-sec">.design</h1>
-      <span class="anim--delay fs-xl font-ter">jj</span>
+      <!-- <span class="anim--delay fs-xl font-ter">jj</span> -->
     </div>
 
     <div class="lines line-two">

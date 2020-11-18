@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-gsap-template",
-  "version": "1.0.0",
-  "description": "A boilerplate for nuxt and gsap created projects.",
+  "name": "proportional design",
+  "version": "1.5.0",
+  "description": "Proportional.design is a web presence for a studio building wood furniture and functional objects.",
   "author": "Matthew Pence",
   "private": true,
   "scripts": {
