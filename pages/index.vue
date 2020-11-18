@@ -51,7 +51,6 @@
   export default {
     head: () => ({
       title: 'prop—home',
-      meta: [{ property: 'og:image', src: 'https://raw.githubusercontent.com/ohiosveryown/proportional.design/master/static/img/art.png' }]
     }),
     components: { Header, Hero, List, Contact, Footer, },
     data() {
