@@ -19,7 +19,7 @@
         document.body.style.height = '100vh'
         Scrollbar.use(OverscrollPlugin)
         Scrollbar.init(bdy, {
-          damping: 0.02,
+          damping: 0.065,
           renderByPixels: true,
           continuousScrolling: true,
           plugins: {
