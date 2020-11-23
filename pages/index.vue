@@ -1,8 +1,8 @@
 <!-- layout -->
 <template>
-  <div>
+  <div class="leave-target">
     <Loader/>
-    <div class="width leave-target">
+    <div class="width">
       <Header class="skw"/>
       <Hero
         class="skw anim--enter"
