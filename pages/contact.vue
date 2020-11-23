@@ -2,7 +2,7 @@
   <main class="width leave-target">
     <!-- <Header/> -->
     <article>
-      <h1 class="anim--enter pt-3 link fs-lgg font-sec">
+      <h1 class="anim--enter pt-3 link fs-md font-sec">
         <nuxt-link to='/'>Return Home</nuxt-link>
       </h1>
       <Contact class="anim--enter pt-4"/>
@@ -17,9 +17,8 @@
 
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
-  main {
-    position: relative;
-  }
+
+  main { position: relative; }
 
   figure {
     position: absolute;

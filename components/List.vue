@@ -1,16 +1,21 @@
 <!-- layout -->
 <template>
-  <li
-    @mouseenter = 'hover = true'
-    @mouseleave = 'hover = false'>
-    <figure class="first-img">
-      <img class="imgLg mb-1" :class = "{ whileHovering : hover }" :src="project.img">
-      <img class="imgSm mb-1" :src="project.img">
+  <li>
+    <figure>
+      <img :class = "{ whileHovering : hover }" :src="project.img">
       <figcaption class="mt-1">
-        <span class="name light">{{ project.name }}</span>
-        <sub class="mb-1 ml-1 font-sec">{{ project.year }}</sub>
-        <span class="materials font-prim">{{ project.material }}</span>
-        <span class="dimensions ml-1 uc font-prim">{{ project.dimensions }}</span>
+        <span class="year mb-2 fs-mdd font-sec">{{ project.year }}</span>
+
+        <span
+          class="name fs-lg thin"
+          :class = "{ outline : hover }"
+          @mouseenter = 'hover = true'
+          @mouseleave = 'hover = false'>
+          {{ project.name }}
+        </span>
+
+        <span class="materials fs-lg font-prim"><span class="font-ter thin italic">in </span>{{ project.material }}</span>
+        <span class="dimensions fs-mdd mt-8 uc font-prim">({{ project.dimensions }})</span>
       </figcaption>
     </figure>
   </li>
@@ -21,83 +26,87 @@
   @import '~/static/style/grid.scss';
 
   li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    position: relative;
-    padding: 2.4rem 0;
-    width: 100%;
-    @include breakpoint(mdl) { border-bottom: .75px solid var(--gravity); }
+    @include breakpoint(mdl) {
+      display: flex;
+      justify-content: flex-end;
+      margin: 14rem 0;
+      text-align: right;
+    }
   }
 
   figure {
-    @include breakpoint(mdl) {
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
+
   }
 
-  .imgLg {
-    @include breakpoint(mdl) {
-      position: fixed;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: var(--zmax);
-      margin: auto;
-      max-width: 80vw;
-      width: auto; height: 80vh;
-      object-fit: cover;
-      opacity: 0;
-      pointer-events: none;
-      box-shadow: 0 4px 84px rgba(0,0,0,.24);
-      // transition: opacity 200ms ease;
-    }
-  }
-
-  .imgSm {
-    --size: 4.8rem;
-    display: none;
-    @include breakpoint(mdl) {
-      display: inline-flex;
-      margin: 0 1.6rem 0 0;
-      // border-radius: 4px;
-      width: var(--size); height: calc(var(--size) + 1rem);
-      object-fit: cover;
-    }
+  img {
+    position: fixed;
+    bottom: 2.4rem; left: 2.4rem;
+    margin: auto;
+    max-width: 80vw;
+    width: auto; height: 80vh;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
   }
 
   figcaption {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    font-size: 2rem;
-    width: 100%;
-    line-height: 1;
+    width: max-content;
   }
 
-  sub {
-    align-self: flex-start;
-    font-size: 1.7rem;
-    flex: 1;
-    @include breakpoint(mdl) { flex: 0; margin-right: 4rem; }
+  figcaption:after {
+    content: '';
+    position: absolute;
+    z-index: var(--zmin);
+    right: 0;
+    display: block;
+    margin: 6.4rem 0;
+    width: grid-width(7); height: 1px;
+    background: var(--gravity);
+  }
+
+  .year {
+    display: block;
+    @include breakpoint(mdl) {
+
+    }
   }
 
   .name {
-    font-size: 2rem;
-    @include breakpoint(mdl) { font-size: 2.4rem; }
+    display: block;
+    background-size: 1px 1em;
+    // box-shadow:
+    //   inset 0 -.4rem var(--gravity),
+    //   inset 0 -2rem var(--blush);
+    display: inline;
+    @include breakpoint(mdl) {
+
+    }
   }
 
   .materials {
-    @include breakpoint(mdl) { flex: 1; font-size: 2.2rem; }
+    display: block;
+    @include breakpoint(mdl) {
+
+    }
   }
 
   .dimensions {
-    display: none;
-    @include breakpoint(mdl) { display: inherit; justify-self: end; font-size: 1.9rem; }
+    display: block;
+    @include breakpoint(mdl) {
+
+    }
   }
 
   .whileHovering {
     @include breakpoint(mdl) { opacity: 1; }
+  }
+
+  .outline {
+    @include breakpoint(mdl) {
+      color: transparent;
+      text-stroke: .5px var(--gravity);
+      -webkit-text-stroke: .5px var(--gravity);
+     }
   }
 
 </style>

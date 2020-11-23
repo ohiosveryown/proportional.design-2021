@@ -10,9 +10,9 @@
     </div>
 
     <div class="lines line-two">
-      <nuxt-link to='/contact'>
-        <button class="anim--enter uc font-sec">Get in Touch</button>
-      </nuxt-link>
+      <div>
+        <nuxt-link to='/contact'><button class="anim--enter uc font-sec">Get in Touch</button></nuxt-link>
+      </div>
       <h2 class="anim--enter fs-lg tar font-prim">is a studio building</h2>
     </div>
 
@@ -66,44 +66,53 @@
     flex-wrap: wrap;
     margin-top: 4vh;
     margin-bottom: .2rem;
-    /* width: max-content; */
     border: 1px solid transparent;
     span { display: inline; margin: -.4rem 0 0 1.2rem; transform: scale(.8); }
     @include breakpoint(md) { margin-bottom: 2rem; }
-    @include breakpoint(mdl) {
-      margin-bottom: 0;
-      span { margin: .4rem 0 0 1.2rem; transform: scale(1); }
-     }
-     @include breakpoint(lg) { span { margin: .8rem 0 0 2rem; }}
+    @include breakpoint(mdl) { margin-bottom: 0; span { margin: .4rem 0 0 1.2rem; transform: scale(1); }}
+    @include breakpoint(lg) { span { margin: .8rem 0 0 2rem; }}
   }
 
   .line-two {
     flex-direction: column-reverse;
     margin-bottom: .8rem;
+    div { flex: 1; pointer-events: none; }
+
+
     @include breakpoint(md) {
       flex-direction: row;
-      justify-content: space-between;
       margin-top: -2rem;
       margin-bottom: 1.2rem;
     }
-    a { margin-left: 3%; }
-    button {
-      margin: 2rem auto;
-      padding: 3.2vh 9.6vw;
-      font-size: 1.6rem;
-      @include breakpoint(md) {
-        margin: 1rem 0 0 0;
-        padding: 3.2vh 3.2vw;
-        font-size: 1.6rem;
-      }
-      @include breakpoint(mdl) {
-        margin: 1.6rem 0 0;
-        padding: 3.2vh 3.2vw;
-        &:hover {
-          box-shadow:
-            inset 1px 1px 0 rgba(255,255,255,1),
-            inset -1px -1px 0px rgba(0,0,0,.8);
-        }
+  }
+
+  button {
+    display: block;
+    margin: 2.4rem auto;
+    padding: 4vh 12vw;
+    font-size: 1.6rem;
+    box-shadow: inset 3px 3px 0 rgba(255,255,255,1), inset -3px -3px 0px rgba(0,0,0,.8);
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+
+    @include breakpoint(md) {
+      margin: 0 auto;
+      padding: 2vh 4vw;
+    }
+
+    @include breakpoint(mdl) {
+      margin-top: .4rem;
+      padding: 3.2vh 4vw;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 1.2rem;
+      padding: 4vh 4.8vw;
+      &:hover {
+        box-shadow:
+          inset 1px 1px 0 rgba(255,255,255,1),
+          inset -1px -1px 0px rgba(0,0,0,.8);
       }
     }
   }
@@ -143,15 +152,6 @@
         background: transparent;
        }
     }
-  }
-
-  button {
-    position: relative;
-    padding: 0 1.2rem;
-    background: none;
-    box-shadow: inset 3px 3px 0 rgba(255,255,255,1), inset -3px -3px 0px rgba(0,0,0,.8);
-    cursor: pointer;
-    span { margin-top: -.6rem; }
   }
 </style>
 

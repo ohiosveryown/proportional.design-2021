@@ -3,9 +3,9 @@
   <div class="leave-target">
     <Loader/>
     <div class="width">
-      <Header class="skw"/>
+      <Header/>
       <Hero
-        class="skw anim--enter"
+        class="anim--enter"
         :firstSrc="require('~/static/img/canyon-dresser-01.jpg')"
         firstAlt="Canyon Dresser"
         firstName="Canyon Dresser"
@@ -19,14 +19,17 @@
         secondMaterial="Sapele"
       />
       <ul>
+        <header class="light">
+          Selected Work Items
+          <svg width="18" height="16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 1h11.504v12.142L6.7 8.545l-.691.722 5.649 5.406.345.331.346-.33 5.649-5.407-.692-.722-4.802 4.596V0H0v1z" fill="#000"/></svg>
+        </header>
         <List
-          class="skw"
           v-for="project in projects"
           :project="project"
           :key="project.id"
         />
       </ul>
-      <Contact class="skw"/>
+      <Contact/>
       <Footer/>
     </div>
   </div>
@@ -39,6 +42,14 @@
   ul {
     margin: 4rem 0 11.2rem;
     @include breakpoint(mdl) { margin: 0 0 20rem; }
+  }
+
+  ul header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 3rem;
+    svg { margin: 1rem 0 0 .8rem; }
   }
 </style>
 

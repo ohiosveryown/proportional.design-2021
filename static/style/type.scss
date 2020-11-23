@@ -21,6 +21,7 @@
 .font-prim { font-family: 'Primary', 'Georgia'; }
 .font-prim-italic { font-family: 'Primary-Italic', 'Georgia'; }
 .font-sec { font-family: 'Secondary', var(--system-ui); }
+.font-ter { font-family: var(--system-ui); }
 
 .fs-xl {
   font-size: 24vw;
@@ -42,6 +43,8 @@
 
 .bold { -webkit-text-stroke: .2px var(--gravity); }
 .light { font-weight: 300; }
+.thin { font-weight: 200; }
+.italic { font-style: italic; }
 .uc { text-transform: uppercase; }
 .tac { text-align: center; }
 .tar { text-align: right; }
