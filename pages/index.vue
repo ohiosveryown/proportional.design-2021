@@ -54,7 +54,7 @@
 
   export default {
     head: () => ({
-      title: 'prop—home',
+      title: 'Proportional Design',
     }),
     components: { Header, Hero, List, Contact, Footer, Loader },
     data() {
