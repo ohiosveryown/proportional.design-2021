@@ -14,58 +14,22 @@
     mounted() {
       if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
       } else {
-        const bdy = document.querySelector('body')
-        // smooooth scroll
-        bdy.style.height = '100vh'
-        Scrollbar.use(OverscrollPlugin)
-        Scrollbar.init(bdy, {
-          damping: 0.065,
-          renderByPixels: true,
-          continuousScrolling: true,
-          plugins: {
-            overscroll: {
-              effect: 'bounce',
-              damping: .2,
-              maxOverscroll: 100,
-            }
-          }
-        })
-
-        // trigger
-        let bodyScrollBar = Scrollbar.init(bdy);
-        ScrollTrigger.scrollerProxy(bdy, {
-          scrollTop(value) {
-            if (arguments.length) {
-              bodyScrollBar.scrollTop = value;
-            }
-            return bodyScrollBar.scrollTop;
-          },
-          getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-          }
-        })
-        bodyScrollBar.addListener(ScrollTrigger.update)
-        bodyScrollBar.track.yAxis.element.remove()
-
-        // skew
-        const skw = '.skw'
-        let proxy = { skew: 0 },
-        skewSetter = gsap.quickSetter(skw, "skewY", "deg"),
-        clamp = gsap.utils.clamp(-20, 20)
-
-        ScrollTrigger.create({
-        scroller: bdy,
-          onUpdate: (self) => {
-            let skew = clamp(self.getVelocity() / 460)
-
-            if (Math.abs(skew) > Math.abs(proxy.skew)) {
-              proxy.skew = skew
-              gsap.to(proxy, {skew: 0, duration: .05, ease: "power4.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew)})
-            }
-          }
-        })
-
-        gsap.set(skw, {transformOrigin: "center center", force3D: true})
+        const app = document.querySelector('body')
+        if (navigator.userAgent.indexOf("Firefox") > 0) {} else {
+         // skew
+         let pageYOffset = window.pageYOffset
+         const render = () => {
+           const newPageOffset = window.pageYOffset
+           const diff = newPageOffset - pageYOffset
+           gsap.to(app, .3, {
+             skewY: diff * 0.03,
+             ease: Power4.inOut,
+           })
+           pageYOffset = newPageOffset
+           requestAnimationFrame(render)
+         }
+         render()
+        }
       }
     }
   }
