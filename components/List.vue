@@ -25,13 +25,10 @@
     flex-wrap: wrap;
     align-items: flex-end;
     position: relative;
-    z-index: var(--zmax);
     padding: 2.4rem 0;
     width: 100%;
     @include breakpoint(mdl) { border-bottom: .75px solid var(--gravity); }
   }
-
-  // figure { display: flex; align-items: center; width: 100%; }
 
   figure {
     @include breakpoint(mdl) {
@@ -43,9 +40,9 @@
 
   .imgLg {
     @include breakpoint(mdl) {
-      position: absolute;
+      position: fixed;
       top: 0; right: 0; bottom: 0; left: 0;
-      z-index: var(--zmin);
+      z-index: var(--zmax);
       margin: auto;
       max-width: 80vw;
       width: auto; height: 80vh;
@@ -53,8 +50,7 @@
       opacity: 0;
       pointer-events: none;
       box-shadow: 0 4px 84px rgba(0,0,0,.24);
-      // transform: scale(.97);
-      transition: all 200ms ease;
+      // transition: opacity 200ms ease;
     }
   }
 
@@ -101,7 +97,7 @@
   }
 
   .whileHovering {
-    @include breakpoint(mdl) { opacity: 1; transform: scale(1); transition: all 200ms ease 300ms; }
+    @include breakpoint(mdl) { opacity: 1; }
   }
 
 </style>
