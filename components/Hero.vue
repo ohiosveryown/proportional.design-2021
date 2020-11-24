@@ -4,18 +4,28 @@
     <figure class="first-img">
       <img :src="firstSrc" :alt="firstAlt">
       <figcaption class="mt-1">
-        <span class="fs-mdd light">{{ firstName }}</span>
-        <sub class="mb-1 ml-1 font-sec">{{ firstYear }}</sub>
-        <span class="font-prim">{{ firstMaterial }}</span>
+        <div class="row">
+          <span class="name light">{{ firstName }}</span>
+          <span class="material font-prim">
+            <span class="font-ter light italic">in</span>
+            {{ firstMaterial }}
+          </span>
+        </div>
+        <span class="year uc font-prim">from {{ firstYear }}</span>
       </figcaption>
     </figure>
 
     <figure class="second-img">
       <img :src="secondSrc" :alt="secondAlt">
       <figcaption class="mt-1">
-        <span class="fs-mdd light">{{ secondName }}</span>
-        <sub class="mb-1 ml-1 font-sec">{{ secondYear }}</sub>
-        <span class="font-prim">{{ secondMaterial }}</span>
+        <div class="row">
+          <span class="name light">{{ secondName }}</span>
+          <span class="material font-prim">
+            <span class="font-ter light italic">in</span>
+            {{ secondMaterial }}
+          </span>
+        </div>
+        <span class="year uc font-prim">from {{ secondYear }}</span>
       </figcaption>
     </figure>
   </section>
@@ -43,18 +53,9 @@
     }
   }
 
-  figcaption {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  sub {
-    flex: 1; align-self:
-    flex-start;
-    font-size: 1.7rem;
-  }
+  .row { display: flex; line-height: .8; }
+  .name { flex: 1; }
+  .year { font-size: 1.6rem; }
 
 </style>
 
