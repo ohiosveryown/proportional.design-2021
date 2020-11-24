@@ -17,6 +17,8 @@
   &:hover { text-decoration: none; }
 }
 
+.orange { background: var(--orange); }
+
 .mt-00 { margin-top: calc(var(--unit) * 0.2 ); }
 .mt-0 { margin-top: calc(var(--unit) * 0.5 ); }
 .mt-1 { margin-top: calc(var(--unit) * 1 ); }

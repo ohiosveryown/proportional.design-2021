@@ -88,7 +88,7 @@
       leaveTarget.style.cssText = `
         transform: skewY(6deg) translateY(-200px);
         opacity: 0;
-        transition: transform 600ms ease, opacity 400ms ease;
+        transition: transform 600ms ease, opacity 600ms ease;
       `
     },
     mounted() {
