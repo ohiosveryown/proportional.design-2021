@@ -20,12 +20,12 @@
     </article>
 
     <form
-    name="contactus"
-    action="/"
-    method="post"
-    netlify
-    netlify-honeypot="bot-field"
-    >
+      name="contactus"
+      action="/"
+      method="post"
+      netlify
+      netlify-honeypot="bot-field">
+
       <input type="hidden" name="form-name" value="contact"/>
       <div class="name">
         <label class="font-sec" for="name">Your Name</label>

@@ -1,14 +1,14 @@
 <template lang="html">
-  <section>
+  <div class="wrapper">
     <div class="track"/>
-  </section>
+  </div>
 </template>
 
 
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
 
-  section {
+  .wrapper {
     display: grid;
     place-items: center;
     position: fixed;
@@ -24,7 +24,6 @@
   .track {
     width: 100%; height: .4rem;
     background: var(--gravity);
-    // animation: loader 1s cubic-bezier(.8,0,.16,1) forwards;
     transform:scaleX(0);
     transform-origin: left;
   }
