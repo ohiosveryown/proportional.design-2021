@@ -7,8 +7,8 @@
       <Hero
         class="anim--enter"
         :firstSrc="require('~/static/img/canyon-dresser-01.jpg')"
-        firstAlt="Canyon Dresser"
-        firstName="Canyon Dresser"
+        firstAlt="Park Dresser"
+        firstName="Park Dresser"
         firstYear="2020"
         firstMaterial="Black Walnut"
 

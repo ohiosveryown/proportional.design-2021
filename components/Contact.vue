@@ -16,7 +16,7 @@
           href="https://twitter.com/cmykw_">
           Matthew Pence</a>.
       </p>
-      <p>If you’re interested in a purchasing a piece, or creating a custom build specifically for your needs, please contact me below. Have fun browsing around, friend.</p>
+      <p>If you’re interested in a purchasing a piece, or are inquiring about a custom build, please reach out by filling out the form below. Have fun browsing around, friend.</p>
     </article>
 
     <form
@@ -39,7 +39,7 @@
 
       <div class="message">
         <label class="font-sec" for="message">Project Information</label>
-        <textarea name="message" required/>
+        <textarea data-autoresize rows="2" name="message" required/>
       </div>
 
       <button class="font-sec uc" type="submit" value="Send message">Submit Form</button>
@@ -71,7 +71,7 @@
   }
 
   p { font-size: 1.6rem; }
-  p + p { text-indent: 4ch; }
+  p + p { text-indent: 4ch; margin-bottom: .4rem; }
 
   div {
     display: flex;
@@ -92,9 +92,13 @@
   }
 
   textarea {
-    padding-top: 1.2rem;
-    height: 3.2rem;
+    padding: 1.2rem 1.2rem 1.6rem;
+    box-sizing: border-box;
+    resize: none;
+    line-height: 1.1;
    }
+
+   textarea:focus { background: var(--blush); }
 
   button {
     display: flex;
@@ -119,6 +123,21 @@
 <!-- logic -->
 <script>
   export default {
+    mounted() {
 
+
+      const addAutoResize = () => {
+        document.querySelectorAll('[data-autoresize]').forEach(function (element) {
+          element.style.boxSizing = 'border-box'
+          var offset = element.offsetHeight - element.clientHeight
+          element.addEventListener('input', function (event) {
+            event.target.style.height = 'auto'
+            event.target.style.height = event.target.scrollHeight + offset + 'px'
+          })
+          element.removeAttribute('data-autoresize')
+        })
+      }
+      addAutoResize()
+    }
   }
 </script>
