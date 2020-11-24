@@ -4,18 +4,22 @@
     <figure>
       <img :class = "{ whileHovering : hover }" :src="project.img">
       <figcaption class="mt-1">
-        <span class="year mb-2 fs-mdd font-sec">{{ project.year }}</span>
-
-        <span
-          class="name fs-lg thin"
-          :class = "{ outline : hover }"
-          @mouseenter = 'hover = true'
-          @mouseleave = 'hover = false'>
-          {{ project.name }}
-        </span>
-
-        <span class="materials fs-lg font-prim"><span class="font-ter thin italic">in </span>{{ project.material }}</span>
-        <span class="dimensions fs-mdd mt-8 uc font-prim">({{ project.dimensions }})</span>
+        <div class="row">
+          <div
+            class="name"
+            :class = "{ outline : hover }"
+            @mouseenter = 'hover = true'
+            @mouseleave = 'hover = false'>
+            {{ project.name }}</div>
+          <div class="material font-prim">
+            <span class="font-ter thin italic">in</span>
+            {{ project.material }}
+          </div>
+        </div>
+        <div class="meta uc">
+          <span class="dimensions">({{ project.dimensions }})</span>
+          <span class="year font-prim">from {{ project.year }}</span>
+        </div>
       </figcaption>
     </figure>
   </li>
@@ -25,76 +29,68 @@
 <style lang="scss" scoped>
   @import '~/static/style/grid.scss';
 
+  .row {
+    display: flex;
+    @include breakpoint(md) { display: inherit; }
+  }
+
+  .name, .material {
+    line-height: .94;
+    @include breakpoint(md) { font-size: 8vw; }
+  }
+
+  .name {
+    flex: 1;
+    font-weight: 300;
+    @include breakpoint(md) { flex: 0; font-weight: 200; }
+  }
+
+  .meta {
+    @include breakpoint(md) { margin-top: 2.4rem; }
+  }
+
+  .dimensions {
+    display: none;
+    @include breakpoint(md) { display: inline; margin-right: .4rem; }
+  }
+
   li {
-    @include breakpoint(mdl) {
+    margin-top: 7.2rem;
+    @include breakpoint(md) {
       display: flex;
       justify-content: flex-end;
-      margin: 14rem 0;
+      margin: 6.4rem 0 14rem;
       text-align: right;
     }
   }
 
-  figure {
-
-  }
-
   img {
-    position: fixed;
-    bottom: 2.4rem; left: 2.4rem;
-    margin: auto;
-    max-width: 80vw;
-    width: auto; height: 80vh;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
+    @include breakpoint(md) {
+      position: fixed;
+      bottom: 2.4rem; left: 2.4rem;
+      margin: auto;
+      max-width: 80vw;
+      width: auto; height: 80vh;
+      object-fit: cover;
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   figcaption {
-    width: max-content;
+    @include breakpoint(md) { width: max-content; }
   }
 
   figcaption:after {
+    display: none;
     content: '';
     position: absolute;
     z-index: var(--zmin);
     right: 0;
-    display: block;
     margin: 6.4rem 0;
-    width: grid-width(7); height: 1px;
+    width: grid-width(5); height: 1px;
     background: var(--gravity);
-  }
-
-  .year {
-    display: block;
-    @include breakpoint(mdl) {
-
-    }
-  }
-
-  .name {
-    display: block;
-    background-size: 1px 1em;
-    // box-shadow:
-    //   inset 0 -.4rem var(--gravity),
-    //   inset 0 -2rem var(--blush);
-    display: inline;
-    @include breakpoint(mdl) {
-
-    }
-  }
-
-  .materials {
-    display: block;
-    @include breakpoint(mdl) {
-
-    }
-  }
-
-  .dimensions {
-    display: block;
-    @include breakpoint(mdl) {
-
-    }
+    @include breakpoint(md) { display: block; }
   }
 
   .whileHovering {

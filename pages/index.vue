@@ -29,7 +29,9 @@
           :key="project.id"
         />
       </ul>
-      <Contact/>
+      <div class="contact-wrapper">
+        <Contact/>
+      </div>
       <Footer/>
     </div>
   </div>
@@ -45,11 +47,19 @@
   }
 
   ul header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 3rem;
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 4rem;
+      font-size: 3rem;
+    }
     svg { margin: 1rem 0 0 .8rem; }
+  }
+
+  .contact-wrapper {
+    @include breakpoint(md) { margin-left: grid-width(7); width: grid-width(5); }
   }
 </style>
 

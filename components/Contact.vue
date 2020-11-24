@@ -25,7 +25,7 @@
     method="post"
     netlify
     netlify-honeypot="bot-field"
-  >
+    >
       <input type="hidden" name="form-name" value="contact"/>
       <div class="name">
         <label class="font-sec" for="name">Your Name</label>
@@ -43,7 +43,7 @@
       </div>
 
       <button class="font-sec uc" type="submit" value="Send message">Submit Form</button>
-  </form>
+    </form>
   </section>
 </template>
 
@@ -54,14 +54,13 @@
 
   article {
     margin-bottom: 5.6rem;
-    @include breakpoint(mdl) { width: grid-width(5); }
   }
 
   h4 {
     display: flex;
     // justify-content: space-between;
     align-items: flex-end;
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: 300;
   }
 
@@ -69,7 +68,6 @@
     transform: scale(.8);
     fill: var(--gravity);
     padding-bottom: .6rem;
-    // border-bottom: 1.5px solid var(--gravity);
   }
 
   p { font-size: 1.6rem; }
@@ -79,7 +77,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3.2rem;
-    @include breakpoint(mdl) { width: grid-width(5); }
   }
 
   label { font-size: 2.4rem; }
@@ -89,7 +86,7 @@
     border-radius: 0;
     padding: 0 1.2rem;
     height: 4rem;
-    background: var(--blush);
+    background: transparent;
     font-size: 1.6rem;
     background-clip: padding-box;
   }

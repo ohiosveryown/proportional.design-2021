@@ -20,6 +20,10 @@
 
   main { position: relative; }
 
+  article {
+    @include breakpoint(md) { width: grid-width(5); }
+  }
+
   figure {
     position: absolute;
     top: 2.4rem; right: 2rem;

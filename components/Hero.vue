@@ -7,7 +7,7 @@
         <div class="row">
           <span class="name light">{{ firstName }}</span>
           <span class="material font-prim">
-            <span class="font-ter light italic">in</span>
+            <span class="font-ter thin italic">in</span>
             {{ firstMaterial }}
           </span>
         </div>
@@ -21,7 +21,7 @@
         <div class="row">
           <span class="name light">{{ secondName }}</span>
           <span class="material font-prim">
-            <span class="font-ter light italic">in</span>
+            <span class="font-ter thin italic">in</span>
             {{ secondMaterial }}
           </span>
         </div>
@@ -48,7 +48,7 @@
   .second-img {
     margin-top: 7.2rem;
     @include breakpoint(md) {
-      margin: -20.8rem 0 26.8rem;
+      margin: -20.8rem 0 24rem;
       width: grid-width(5);
     }
   }
