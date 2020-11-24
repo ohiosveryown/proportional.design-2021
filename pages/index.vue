@@ -10,7 +10,7 @@
         firstAlt="Canyon Dresser"
         firstName="Canyon Dresser"
         firstYear="2020"
-        firstMaterial="American Oak"
+        firstMaterial="Black Walnut"
 
         :secondSrc="require('~/static/img/mila-cabinet.jpg')"
         secondAlt="Mila Cabinet"

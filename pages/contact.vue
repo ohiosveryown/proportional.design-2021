@@ -32,7 +32,7 @@
 
     @include breakpoint(mdl) {
       top: 20rem; right: 12vw;
-      transform: scale(.5);
+      transform: scale(.4);
     }
   }
   a, h1 { margin: 0; width: max-content; }
