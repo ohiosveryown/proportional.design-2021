@@ -41,6 +41,7 @@ const projects = [
   },
   {
     id: 6,
+    // name: 'Estrala Dresser',
     name: 'Estrala Dresser',
     year: '2021',
     material: 'Ambrosia Maple',

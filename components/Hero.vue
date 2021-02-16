@@ -55,7 +55,7 @@
 
   .row { display: flex; line-height: .8; }
   .name { flex: 1; }
-  .year { font-size: 1.4rem; }
+  .year { font-size: 1.6rem; }
 
 </style>
 
