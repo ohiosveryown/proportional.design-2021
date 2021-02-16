@@ -39,6 +39,14 @@ const projects = [
     dimensions: '26h x 44w x 14d',
     img: "./img/chelsea-cabinet.jpg"
   },
+  {
+    id: 6,
+    name: 'Estrala Dresser',
+    year: '2021',
+    material: 'Ambrosia Maple',
+    dimensions: '32h x 58w x 20d',
+    img: "./img/00.jpg"
+  },
 ]
 
 export default projects
