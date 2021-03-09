@@ -4,7 +4,7 @@
 </template>
 
 <!-- style -->
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~/static/style/grid.scss";
 .story-wrapper {
   position: ￼;

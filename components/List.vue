@@ -3,34 +3,39 @@
   <li>
     <figure>
       <img
-        class="img-main"
+        class="main-img"
         :class="{ whileHovering: hover }"
         :src="project.img"
       />
-      <figcaption class="mt-1">
-        <div class="row">
-          <div class="story-prev link">
-            <a target="_blank" :href="project.storyLink">
-              <span class="font-sec font mdd uc">{{ project.viewStory }}</span>
-              <img class="story-thumb" :src="project.storyThumb" alt="" />
-            </a>
+
+      <figcaption>
+        <!-- story -->
+        <a class="story-prev link" target="_blank" :href="project.storyLink">
+          <span class="story-link font-sec font mdd uc">{{
+            project.viewStory
+          }}</span>
+          <img class="story-thumb" :src="project.storyThumb" alt="" />
+        </a>
+
+        <div class="mt-1 meta">
+          <div class="row">
+            <div
+              class="name"
+              :class="{ outline: hover }"
+              @mouseenter="hover = true"
+              @mouseleave="hover = false"
+            >
+              {{ project.name }}
+            </div>
+            <div class="material font-prim">
+              <span class="font-ter thin italic">in</span>
+              {{ project.material }}
+            </div>
           </div>
-          <div
-            class="name"
-            :class="{ outline: hover }"
-            @mouseenter="hover = true"
-            @mouseleave="hover = false"
-          >
-            {{ project.name }}
+          <div class="dimension uc">
+            <span class="dimensions">({{ project.dimensions }})</span>
+            <span class="year font-prim">from {{ project.year }}</span>
           </div>
-          <div class="material font-prim">
-            <span class="font-ter thin italic">in</span>
-            {{ project.material }}
-          </div>
-        </div>
-        <div class="meta uc">
-          <span class="dimensions">({{ project.dimensions }})</span>
-          <span class="year font-prim">from {{ project.year }}</span>
         </div>
       </figcaption>
     </figure>
@@ -40,24 +45,28 @@
 <!-- style -->
 <style lang="scss" scoped>
 @import "~/static/style/grid.scss";
-
-.row {
+figcaption {
   display: flex;
+  flex-direction: column-reverse;
   @include breakpoint(md) {
-    display: inherit;
+    flex-direction: column;
   }
 }
 
 .story-prev {
-  margin-bottom: 2.2rem;
-  width: max-content;
-  margin-left: auto;
-  a {
-    display: flex;
-    align-items: center;
-  }
-  span {
-    margin-right: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+  width: 100%;
+  @include breakpoint(md) {
+    margin-left: auto;
+    width: max-content;
+    .story-link {
+      margin-top: 0;
+      margin-right: 0.8rem;
+    }
   }
 }
 
@@ -65,6 +74,13 @@
   margin: 0;
   width: auto;
   height: 5.6rem;
+}
+
+.row {
+  display: flex;
+  @include breakpoint(md) {
+    display: inherit;
+  }
 }
 
 .name,
@@ -84,7 +100,8 @@
   }
 }
 
-.meta {
+.meta,
+.dimension {
   @include breakpoint(md) {
     margin-top: 2.4rem;
   }
@@ -103,12 +120,12 @@ li {
   @include breakpoint(md) {
     display: flex;
     justify-content: flex-end;
-    margin: 6.4rem 0 14rem;
+    margin: 4rem 0 4rem;
     text-align: right;
   }
 }
 
-.img-main {
+.main-img {
   @include breakpoint(md) {
     position: fixed;
     bottom: 2.4rem;
@@ -123,13 +140,13 @@ li {
   }
 }
 
-figcaption {
+.meta {
   @include breakpoint(md) {
     width: max-content;
   }
 }
 
-figcaption:after {
+.meta:after {
   display: none;
   content: "";
   position: absolute;
@@ -141,6 +158,7 @@ figcaption:after {
   background: var(--gravity);
   @include breakpoint(md) {
     display: block;
+    margin: 8rem 0 6.4rem;
   }
 }
 
