@@ -7,15 +7,14 @@
         :class="{ whileHovering: hover }"
         :src="project.img"
       />
-
       <figcaption class="mt-1">
         <div class="row">
-          <a target="_blank" :href="project.storyLink">
+          <nuxt-link :to="'/' + project.storyLink">
             <div class="story link">
               <span class="font-sec font mdd uc">{{ project.viewStory }}</span>
               <img class="story-thumb" :src="project.storyThumb" alt="" />
             </div>
-          </a>
+          </nuxt-link>
           <div
             class="name"
             :class="{ outline: hover }"

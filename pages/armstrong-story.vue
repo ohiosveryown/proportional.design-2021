@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <h1>armstrong</h1>
-    <div class="pointer stories-img">
-      <div class="story-img"></div>
-      <div class="story-img"></div>
-      <div class="story-img"></div>
-    </div>
+  <div class="wrapper">
+    <header class="">
+      <div class="stories-img">
+        <div class="story-img"></div>
+        <div class="story-img"></div>
+        <div class="story-img"></div>
+      </div>
+      <h1 class="font-sec fs-mdd uc">Armstrong Nightstand</h1>
+      <h2 class="font-prim fs-sm uc">From 2021</h2>
+    </header>
 
     <div class="imgs">
       <img
@@ -26,13 +29,28 @@
 </template>
 
 <style lang="scss">
+@import "~/static/style/grid.scss";
+.wrapper {
+  margin: 0 auto;
+  width: grid-width(6);
+}
+
+h1,
+h2 {
+  line-height: 1;
+}
+
+header {
+  margin-bottom: 1.6rem;
+}
+
 .stories-img {
   display: flex;
   position: relative;
   padding: 20px 0;
-  margin: 20px auto 0;
-  width: 90vw;
-  height: 2px;
+  margin: 0 auto 0;
+  width: 100%;
+  height: 2.4px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0);
 }
@@ -42,7 +60,7 @@
   flex: 1;
   margin-left: 6px;
   transform-origin: left;
-  transform: scaleX(0.01);
+  transform: scaleX(0);
   transition: transform ease;
 }
 
@@ -70,7 +88,7 @@
 
 .imgs {
   position: relative;
-  margin: 40px auto 0;
+  margin: 0px auto 0;
   width: 50vw;
   height: 70vh;
   overflow: hidden;
@@ -93,7 +111,7 @@
 <script>
 export default {
   mounted() {
-    const trigger = document.querySelector(".stories-img");
+    const trigger = document.querySelector("header");
     const stories = document.querySelectorAll(".story-img");
     const storiesQty = document.querySelectorAll(".story-img").length;
     const imgs = document.querySelectorAll(".img");

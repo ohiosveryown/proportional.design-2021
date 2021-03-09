@@ -8,8 +8,7 @@ const projects = [
     img: "./img/shaker-table.jpg",
     viewStory: "View Story",
     storyThumb: "./img/armstrong-story-thumbnail@2x.png",
-    storyLink:
-      "https://res.cloudinary.com/da32ufmnf/video/upload/v1615239510/proportional.design/story_ymzet9.mp4",
+    storyLink: "armstrong-story",
   },
   {
     id: 2,
