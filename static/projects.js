@@ -1,11 +1,11 @@
 const projects = [
   {
     id: 1,
-    name: "Golec Shaker Table",
-    year: "2019",
-    material: "American Oak",
-    dimensions: "28h x 15w x 24d",
-    img: "./img/shaker-table.jpg",
+    name: "Armstrong Nightstand",
+    year: "2021",
+    material: "Claro Walnut",
+    dimensions: "18h x 24w x 16d",
+    img: "./img/armstrong.jpg",
     viewStory: "View Story",
     storyThumb: "./img/armstrong-story-thumbnail.png",
     storyLink:
@@ -13,6 +13,14 @@ const projects = [
   },
   {
     id: 2,
+    name: "Golec Shaker Table",
+    year: "2019",
+    material: "American Oak",
+    dimensions: "28h x 15w x 24d",
+    img: "./img/shaker-table.jpg",
+  },
+  {
+    id: 3,
     name: "Park Dresser II",
     year: "2020",
     material: "Black Walnut",
@@ -20,7 +28,7 @@ const projects = [
     img: "./img/canyon-dresser-02.jpg",
   },
   {
-    id: 3,
+    id: 4,
     name: "Laine Dining Table",
     year: "2020",
     material: "American Oak",
@@ -28,7 +36,7 @@ const projects = [
     img: "./img/oxford-dining-table.jpg",
   },
   {
-    id: 4,
+    id: 5,
     name: "Dye 1 + 2 Nightstands",
     year: "2019",
     material: "Black Walnut",
@@ -36,7 +44,7 @@ const projects = [
     img: "./img/az1-az2-nightstands.jpg",
   },
   {
-    id: 5,
+    id: 6,
     name: "Sidney Cabinet",
     year: "2020",
     material: "Walnut Plywood",
@@ -44,13 +52,12 @@ const projects = [
     img: "./img/chelsea-cabinet.jpg",
   },
   {
-    id: 6,
-    // name: 'Estrala Dresser',
+    id: 7,
     name: "Casper Dresser",
     year: "2021",
     material: "Ambrosia Maple",
     dimensions: "32h x 58w x 20d",
-    img: "./img/00.jpg",
+    img: "./img/casper.jpg",
   },
 ];
 
