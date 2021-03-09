@@ -1,11 +1,12 @@
 :root {
-  --system-ui: 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  --system-ui: "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui",
+    arial, sans-serif;
   --unit: 8px;
   --max-width: 180rem;
-//
+  //
   --ease: all 400ms ease;
-  --inout: cubic-bezier(.8,0,.16,1);
-//
+  --inout: cubic-bezier(0.8, 0, 0.16, 1);
+  //
   --zmax: 9999;
   --z5: 5;
   --z4: 4;
@@ -16,7 +17,7 @@
   --zmin: -9999;
 
   --gravity: #202023;
-  --blush: #e1dbd4;
+  --blush: #d1cac2;
   --orange: #c65d3e;
 }
 
@@ -35,23 +36,79 @@ body {
   background: var(--blush);
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a, span, blockquote, caption, ul, li, img, button, section, article, figure, main, footer {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+blockquote,
+caption,
+ul,
+li,
+img,
+button,
+section,
+article,
+figure,
+main,
+footer {
   margin: 0;
   padding: 0;
 }
 
-li { list-style: none; }
+li {
+  list-style: none;
+}
 
-a { text-decoration: none; color: inherit; cursor: pointer; }
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
 
-p { font-size: 1.8rem; line-height: 1.4; letter-spacing: .2px; }
+p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
 
-button     { border: none; background: #ccc; cursor: pointer; font-size: 1.3rem; }
+button {
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
 
-video, img { display: block; margin: auto; max-width: 100%; height: auto; }
-img        { vertical-align: top; }
-ul         { list-style-type: none; -webkit-margin-before: 0; -webkit-margin-after: 0; }
+video,
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+img {
+  vertical-align: top;
+}
+ul {
+  list-style-type: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
 
-:focus     { outline: 2px solid var(--gravity); }
+:focus {
+  outline: 2px solid var(--gravity);
+}

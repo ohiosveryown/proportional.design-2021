@@ -1,50 +1,75 @@
 <template>
-  <div class="wrapper">
-    <header class="">
-      <div class="stories-img">
-        <div class="story-img"></div>
-        <div class="story-img"></div>
-        <div class="story-img"></div>
-      </div>
-      <h1 class="font-sec fs-mdd uc">Armstrong Nightstand</h1>
-      <h2 class="font-prim fs-sm uc">From 2021</h2>
-    </header>
+  <div class="story-wrapper">
+    <!-- <div class="reload">reload</div> -->
+    <div class="story-meta">
+      <ul class="timelines">
+        <!-- story timeline -->
+        <li class="timeline">
+          <div class="timeline-foreground" />
+        </li>
 
-    <div class="imgs">
-      <img
-        src="https://images.unsplash.com/photo-1612836622494-20f5f39bd7cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400"
-        class="img img-one"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1613932379910-8d7b41792e5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400"
-        class="img img-two"
-      />
+        <!-- story timeline -->
+        <li class="timeline">
+          <div class="timeline-foreground" />
+        </li>
 
-      <img
-        src="https://images.unsplash.com/photo-1613205163422-a3a4e0240e2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNTIzMDg2MQ&ixlib=rb-1.2.1&q=80&w=400"
-        class="img img-three"
-      />
+        <!-- story timeline -->
+        <!-- <li class="timeline">
+          <div class="timeline-foreground" />
+        </li> -->
+      </ul>
+
+      <header class="story-header">
+        <img
+          src="../static/img/stories/armstrong/thumb-single.png"
+          alt="￼"
+          class="thumbnail"
+        />
+
+        <div class="header-first-row">
+          <h1 class="font-sec fs-mdd uc">Armstrong Nightstand</h1>
+          <h2 class="font-prim fs-sm uc">From 2021</h2>
+        </div>
+        <h3 class="header-back font-ter fs-sm">
+          <nuxt-link to="/">Go Back</nuxt-link>
+        </h3>
+      </header>
     </div>
+
+    <ul class="story-img-wrapper">
+      <!-- story img -->
+      <li>
+        <img class="story" src="../static/img/03.jpg" alt="￼" />
+      </li>
+      <!-- story img -->
+      <!-- <li>
+        <img
+          class="story"
+          src="../static/img/stories/armstrong/00.png"
+          alt="￼"
+        />
+      </li> -->
+      <!-- story img -->
+      <li>
+        <video
+          autoplay="autoplay"
+          playsinline=""
+          loop="loop"
+          muted
+          src="https://res.cloudinary.com/da32ufmnf/video/upload/v1615255140/proportional.design/story-armstrong/01_vwckcf.mp4"
+          class="story"
+        >
+          ￼
+        </video>
+      </li>
+    </ul>
   </div>
 </template>
 
 <style lang="scss">
 @import "~/static/style/grid.scss";
-.wrapper {
-  margin: 0 auto;
-  width: grid-width(6);
-}
 
-h1,
-h2 {
-  line-height: 1;
-}
-
-header {
-  margin-bottom: 1.6rem;
-}
-
-.stories-img {
+.timelines {
   display: flex;
   position: relative;
   padding: 20px 0;
@@ -52,20 +77,26 @@ header {
   width: 100%;
   height: 2.4px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0);
 }
 
-.story-img {
-  background: #fff;
+.timeline {
   flex: 1;
   margin-left: 6px;
+  background: rgba(255, 255, 255, 0.5);
   transform-origin: left;
-  transform: scaleX(0);
+  transform: scaleX(1);
   transition: transform ease;
+  &:first-of-type {
+    margin-left: 0;
+  }
 }
 
-.story-img:first-of-type {
-  margin-left: 0;
+.timeline-foreground {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 @keyframes fill {
@@ -76,7 +107,6 @@ header {
     transform: scaleX(1);
   }
 }
-
 @keyframes show {
   0% {
     opacity: 0;
@@ -85,84 +115,62 @@ header {
     opacity: 1;
   }
 }
-
-.imgs {
-  position: relative;
-  margin: 0px auto 0;
-  width: 50vw;
-  height: 70vh;
-  overflow: hidden;
-}
-
-.img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  background: var(--gravity);
-}
 </style>
 
 <script>
 export default {
+  layout: "stories",
   mounted() {
-    const trigger = document.querySelector("header");
-    const stories = document.querySelectorAll(".story-img");
-    const storiesQty = document.querySelectorAll(".story-img").length;
-    const imgs = document.querySelectorAll(".img");
-    const time = "2s";
+    // const reload = document.querySelector(".reload");
+    // reload.addEventListener("click", () => {
+    //   location.reload();
+    // });
 
+    const trigger = document.querySelector(".story-meta");
+    const stories = document.querySelectorAll(".timeline-foreground");
+    const storiesQty = stories.length;
+    const imgs = document.querySelectorAll(".story");
+    const time = "5s";
     imgs[0].style.opacity = "1";
-    console.log("hellooooo");
+
+    // story timeline
     stories[0].style.cssText = `
-    animation: fill ${time} linear forwards;
-  `;
-
+      animation: fill ${time} linear forwards;
+    `;
+    // story timeline
     stories[1].style.cssText = `
-    animation: fill ${time} ${time} linear forwards;
-  `;
+      animation: fill ${time} ${time} linear forwards;
+    `;
+    // story timeline
+    // stories[2].style.cssText = `
+    //   animation: fill ${time} calc(${time} * 2) linear forwards;
+    // `;
 
-    stories[2].style.cssText = `
-    animation: fill ${time} calc(${time} * 2) linear forwards;
-  `;
-
-    imgs[0].style.cssText = `
-    animation: show 1ms linear forwards;
-  `;
-
+    // story img
     imgs[1].style.cssText = `
-    animation: show 1ms ${time} linear forwards;
-  `;
-    imgs[2].style.cssText = `
-    animation: show 1ms calc(${time} * 2) linear forwards;
-  `;
+      animation: show 1ms ${time} linear forwards;
+    `;
+
+    // story img
+    // imgs[2].style.cssText = `
+    //   animation: show 1ms calc(${time} * 2) linear forwards;
+    // `;
 
     trigger.addEventListener("mouseenter", () => {
       stories[0].style.animationPlayState = "paused";
       stories[1].style.animationPlayState = "paused";
-      stories[2].style.animationPlayState = "paused";
 
       imgs[0].style.animationPlayState = "paused";
       imgs[1].style.animationPlayState = "paused";
-      imgs[2].style.animationPlayState = "paused";
     });
 
     trigger.addEventListener("mouseleave", () => {
       stories[0].style.animationPlayState = "running";
       stories[1].style.animationPlayState = "running";
-      stories[2].style.animationPlayState = "running";
 
       imgs[0].style.animationPlayState = "running";
       imgs[1].style.animationPlayState = "running";
-      imgs[2].style.animationPlayState = "running";
     });
-
-    // console.log(time)
   },
 };
 </script>

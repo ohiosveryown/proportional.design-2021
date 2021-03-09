@@ -9,12 +9,12 @@
       />
       <figcaption class="mt-1">
         <div class="row">
-          <nuxt-link :to="'/' + project.storyLink">
-            <div class="story link">
+          <div class="story-prev link">
+            <a target="_blank" :href="project.storyLink">
               <span class="font-sec font mdd uc">{{ project.viewStory }}</span>
               <img class="story-thumb" :src="project.storyThumb" alt="" />
-            </div>
-          </nuxt-link>
+            </a>
+          </div>
           <div
             class="name"
             :class="{ outline: hover }"
@@ -48,14 +48,16 @@
   }
 }
 
-.story {
-  display: flex;
-  align-items: center;
+.story-prev {
   margin-bottom: 2.2rem;
   width: max-content;
   margin-left: auto;
+  a {
+    display: flex;
+    align-items: center;
+  }
   span {
-    margin-right: 1.6rem;
+    margin-right: 0.8rem;
   }
 }
 
