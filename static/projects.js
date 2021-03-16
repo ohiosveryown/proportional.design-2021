@@ -5,7 +5,7 @@ const projects = [
     year: "2021",
     material: "Claro Walnut",
     dimensions: "18h x 24w x 16d",
-    img: "./img/armstrong.jpg",
+    img: "./img/05.jpg",
     viewStory: "View Story",
     storyThumb: "./img/armstrong-story-thumbnail.png",
     storyLink:
