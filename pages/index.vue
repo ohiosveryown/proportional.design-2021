@@ -29,6 +29,7 @@
             />
           </svg>
         </header>
+        <span>(Hint: Hover Item Titles)</span>
         <List
           v-for="project in projects"
           :project="project"
@@ -52,6 +53,16 @@ ul {
   @include breakpoint(mdl) {
     margin: 0 0 20rem;
   }
+  span {
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2rem;
+      font-size: 1.4rem;
+      opacity: .56;
+    }
+  }
 }
 
 ul header {
@@ -63,6 +74,7 @@ ul header {
     padding-bottom: 2.4rem;
     font-size: 3rem;
   }
+
   svg {
     margin: 1rem 0 0 0.8rem;
   }
