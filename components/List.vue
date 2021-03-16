@@ -73,7 +73,7 @@ figcaption {
 .story-thumb {
   margin: 0;
   width: auto;
-  height: 5.6rem;
+  height: 4.2rem
 }
 
 .row {
